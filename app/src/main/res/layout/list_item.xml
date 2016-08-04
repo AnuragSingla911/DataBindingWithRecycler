@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="info"
+            type="flights.android.com.flightslist.modal.Flight" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+
+        <TextView
+            android:id="@+id/flightName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/darker_gray"
+            android:text="@{info.airlineCode}" />
+
+        <TextView
+            android:id="@+id/srcCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/flightName"
+            android:layout_marginTop="10dp"
+            android:text="@{info.originalCode}" />
+
+        <TextView
+            android:id="@+id/srcDestinationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flightName"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/price"
+            android:layout_toRightOf="@+id/srcCityName"
+            android:text="@{info.destinationCode}" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/flightName"
+            android:layout_marginTop="10dp"
+            android:text="@{info.price}" />
+
+        <TextView
+            android:id="@+id/startTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/srcCityName"
+            android:layout_marginTop="15dp"
+            android:text="Take Off Time" />
+
+        <TextView
+            android:id="@+id/endTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/endTime"
+            android:layout_below="@+id/srcCityName"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@+id/durationLabel"
+            android:layout_toRightOf="@+id/startTimeLabel"
+            android:text="Landing Time" />
+
+        <TextView
+            android:id="@+id/durationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/srcCityName"
+            android:layout_marginTop="15dp"
+            android:text="Duration" />
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/startTimeLabel"
+            android:layout_marginTop="5dp"
+            android:text="@{info.takeOffTime}" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/startTimeLabel"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/duration"
+            android:layout_toRightOf="@+id/startTime"
+            android:text="@{info.landingTime}" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/startTimeLabel"
+            android:layout_marginTop="5dp"
+            android:text="@{info.duration}" />
+
+
+    </RelativeLayout>
+</layout>
